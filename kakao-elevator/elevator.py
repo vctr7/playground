@@ -66,8 +66,7 @@ def decide(call_list, elev_list):
     if destination == 0:
         print("destination err!")
         return None
-    # 탑승할 새끼 전부 태웠을 때 내려주러
-    # 해당 층에 내릴 새끼 있는 경우.
+
     if elev.current_floor in out_:
         if elev.status == "UPWARD" or elev.status == "DOWNWARD":
             command.append({"elevator_id": elev.id, "command": "STOP"})
@@ -85,7 +84,7 @@ def decide(call_list, elev_list):
 
 
 
-    # 해당 층에 탈 새끼 있는 경우 ( 내릴 새끼는 이미 다 내림 )
+    # 해당 층에 탈 사람있는 경우 ( 내릴 사람은 이미 다 내림 )
     if elev.current_floor not in out_ and elev.current_floor in in_ and len(elev.passengers) < 8 and chksum==0:
         if elev.status == "UPWARD" or elev.status == "DOWNWARD":
             command.append({"elevator_id": elev.id, "command": "STOP"})
