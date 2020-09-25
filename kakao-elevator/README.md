@@ -1,4 +1,4 @@
-# playground
+# Elevator algorithm
 
 Use collective control algorithm to control the elevator.
 
